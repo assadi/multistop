@@ -1,0 +1,8 @@
+1. Download eclipse for java: http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunar
+2. Install git bash: https://git-scm.com/downloads
+3. Clone git repository: git clone https://github.com/assadi/multistop.git
+4. Download tomcat 8.0.47
+5. Open eclipse
+6. Goto servers tab -> click create new server link -> choose tomcat 8
+7. import project multistop from git repo
+8. right click on project run->run on server
