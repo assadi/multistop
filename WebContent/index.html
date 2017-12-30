@@ -2,16 +2,94 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-	<script type="text/javascript" src="js/jquery/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- <link href = "js/awesomplete-gh-pages/awesomplete.css" rel = "stylesheet"> -->
+	<!-- <script src = "js/jquery/jquery-3.2.1.js"></script> -->
+	<!-- <script src = "js/jquery/jquery-3.2.1.min.js"></script> -->
+	<!-- <script src = "js/awesomplete-gh-pages/awesomplete.js"></script> -->
+	<link href = "js/jquery-ui-1.12.1.custom/jquery-ui.css" rel = "stylesheet">
+	<script src = "js/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+	<script src = "js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/airports_input.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
+	<script type="text/javascript" src="js/stops.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
-<title>Multistop</title>
+<title>MultistApp</title>
 </head>
-<body>
-<center>
-	<h1>Welcome to Multistop</h1>
-	<input type="button" value="Search flights" onclick="onSearchFlights();" />
-	<input type="button" value="Search hotels" onclick="onSearchHotels();" />
-</center>
+<body id="index_body">
+<h1>MultistApp</h1>
+<div>
+	<label> Departure:
+		<input id="departure_airport" name="Departure" placeholder="Country, city or airport">
+	</label>
+	<label>
+		Date of departure:
+		<input id="departure_start_date" type="date" name= "Date">
+		-
+		<input id="departure_end_date" type="date" name= "Date">
+	</label>
+</div>
+<br>
+<div>
+	<input type="button" value="Add Stop" onClick= addStop()>
+</div>
+<div>
+	<table id="stop_table" border="1">
+		<thead>
+			<tr>
+				<th>Number of stop</th>
+				<th>Country, city, airport</th>
+				<th>Days (optional)</th>
+				<th>Remove Stop</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+</div>
+<br>
+<div>	
+	<label> Only direct flights
+		<input id="only_direct_flights" type="checkbox" name="DirectFlights">
+	</label>
+</div>
+
+<br>
+<div>	
+	<label> Trip total length
+		<input id="trip_length" type="text" name="Trip total length" placeholder="min-max">
+	</label>
+</div>
+<br>
+<div>	
+	<label> Cost limit
+		<input id="cost_limit" type="text" name="CostLimit" placeholder = "$">
+	</label>	
+</div>
+<br>
+<div>
+	<input type="button" value="Add Event" onClick= addEvent()>
+</div>
+<div>
+	<table id="event_table" border="1">
+		<thead>
+			<tr>
+				<th>Place</th>
+				<th>Date</th>
+				<th>Remove Event</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+</div>
+<br>
+<div>
+	<input type="button" value="Search Flights" onclick="onSearchFlights()"/>
+</div>
+<script type="text/javascript">
+    assignAirportsAutocomplete("#departure_airport");
+</script>
 </body>
 </html>
