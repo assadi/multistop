@@ -1,14 +1,14 @@
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Event {
 
 	private Airport mLocation = null;
-	private Date mStartDate = null;
-	private Date mEndDate = null;
+	private LocalDate mStartDate = null;
+	private LocalDate mEndDate = null;
 	
-	public Event(Airport location, Date startDate, Date endDate) {
+	public Event(Airport location, LocalDate startDate, LocalDate endDate) {
 		mLocation = location;
 		mStartDate = startDate;
 		mEndDate = endDate;
@@ -18,11 +18,11 @@ public class Event {
 		return mLocation;
 	}
 	
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return mStartDate;
 	}
 	
-	public Date getEndDate() {
+	public LocalDate getEndDate() {
 		return mEndDate;
 	}
 }
